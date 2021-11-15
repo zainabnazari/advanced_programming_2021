@@ -1,12 +1,14 @@
-CXX = c++
-CXXFLAGS = -Wall -Wextra -g -std=c++14
+CXX = clang++
+CXXFLAGS = -Wall -Wextra -std=c++14
+# I removed -g because it was creating .x.dSYM files.
+# Wall :warning all
 
 SRC = 01_variables.cpp            \
       02_hello_name.cpp           \
       03_loops.cpp                \
       04_vars_pointers_refs.cpp   \
       05_functions.cpp            \
-      06_watch_out.cpp 
+      06_watch_out.cpp
 
 EXE = $(SRC:.cpp=.x)
 
@@ -21,7 +23,7 @@ all: $(EXE)
 
 .PHONY: all
 
-%.x: %.cpp 
+%.x: %.cpp
 	$(CXX) $< -o $@ $(CXXFLAGS)
 
 format: $(SRC)
