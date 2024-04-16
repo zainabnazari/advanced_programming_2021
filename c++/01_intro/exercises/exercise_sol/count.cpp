@@ -5,12 +5,15 @@
 
 std::string mystring;
 int main () {
-std::ifstream myfile ("note.txt");;
+std::ifstream myfile ("note.txt");
+i=0
 
-if ( myfile.is_open() ) { // always check whether the file is open
+if ( myfile.is_open() ) { while (myfile.good())
+{ // always check whether the file is open
 myfile >> mystring; // pipe file's content into stream
-std::cout << mystring; // pipe stream's content to standard output
-}
+if (mystring==mystring)
+std::cout << mystring <<"\n"; // pipe stream's content to standard output
+}}
 
 
 }
